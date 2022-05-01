@@ -11,23 +11,24 @@
           <li><a class="dropdown-item" href="{% url 'about' %}">About</a></li>
           <li><a class="dropdown-item" href="{% url 'patients_create' %}">Add Patient</a></li>
           <li><a class="dropdown-item" href="{% url 'patients' %}">View All Patients</a></li>
+          <li><a class="dropdown-item" href="{% url 'cal:event_new' %}">New Appointment</a></li>
         </ul>
       </div>
     </div>
     <div>
-      <a class="navbar-brand" style="padding-left: 100px; display: flex; justify-content: center" href="#">
+      <a class="navbar-brand" style="padding-left: 100px; display: flex; justify-content: center" href="{% url 'cal:calendar' %}">
         <img src="{% static 'images/brand_logo.png' %}">
       </a>
     </div>
     <div style="display: flex; justify-content: flex-end">
       <ul>
-        <li><a href="#">Login</a></li>
+        <li class="login_link"><a href="#">Login</a></li>
       </ul>
       <ul>
         <li><a href="#">| </a></li>
       </ul>
       <ul>
-        <li><a href="#">Signup</a></li>
+        <li class="login_link"><a href="#">Signup</a></li>
       </ul>
     </div>
   </div>

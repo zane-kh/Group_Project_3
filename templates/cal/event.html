@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Event
+{% endblock %}
+
+{% block content %}
+<h2 class="display-6">Create an Appointment</h2>
+<br>
+<form method="post">
+  {% csrf_token %}
+  <table class="form form-table">
+      {{ form }}
+      <tr>
+          <td colspan="2">
+              <input type="hidden" value=" {{patient.patient_id}} ">
+              <br>
+              <a class="btn btn-dark left" href="{% url 'cal:calendar' %}"> Calendar </a>
+              <button type="submit" class="btn btn-success right"> Submit </button>
+          </td>
+      </tr>
+  </table>
+</form>
+{% endblock %}
