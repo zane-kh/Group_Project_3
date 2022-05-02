@@ -20,4 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main_app.urls')),
     path('', include('cal.urls')),
+    path('vet_account/', include('django.contrib.auth.urls')),
+    path('vet_account/', include('vet_account.urls')),
 ]

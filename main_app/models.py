@@ -22,7 +22,6 @@ class Patient(models.Model):
     color = models.CharField(max_length=50)
     created_date = models.DateTimeField(default=datetime.now, blank=True)
     user = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
-    
 
     def __str__(self):
         return self.patient_name
@@ -36,7 +35,6 @@ class Service(models.Model):
     service_duration = models.DurationField()
     service_description = models.TextField(max_length=200)
     user = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
-    
 
     def __str__(self):
         return self.service_type
