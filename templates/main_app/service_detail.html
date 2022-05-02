@@ -2,12 +2,12 @@
 
 {% block content %}
 
-{% for service in service_list  %}
+
     
 <div style="margin: 20px 40px; display: flex; justify-content: space-between; width: 40vw; ">
     <h1>Service ID: {{service.id}}</h1>
-    <a href="{% url 'service_update' service.id %}"> <button class="btn btn-md btn-secondary">Edit</button> </a>
-    <a href="{% url 'service_delete' service.id %}"> <button class ="btn btn-md btn-danger">Delete</button> </a>
+    <a href="{% url 'service_update' service.pk %}"> <button class="btn btn-md btn-secondary">Edit</button> </a>
+    <a href="{% url 'service_delete' service.pk %}"> <button class ="btn btn-md btn-danger">Delete</button> </a>
 </div>
 
 <div style="display: flex; flex-direction: column;">
@@ -24,6 +24,6 @@
     </div>
 </div>
 
-{% endfor %}
+
 
 {% endblock content %}

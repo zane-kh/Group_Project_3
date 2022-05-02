@@ -86,7 +86,7 @@ def patient_history(request, patient_id, event_id = None):
     })
     
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Patient, Service
 
@@ -110,7 +110,7 @@ class ServiceCreate(CreateView):
     model = Service
     fields = '__all__'
 
-class ServiceDetail(ListView):
+class ServiceDetail(DetailView):
     model = Service 
     template_name = 'main_app/service_detail.html'
     
