@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from main_app.models import Patient, Service
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Event(models.Model):
@@ -10,6 +11,7 @@ class Event(models.Model):
     description=models.TextField()
     start_time = models.DateTimeField()
     end_time = models.DateTimeField()
+    user = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
     
     @property
     def get_html_url(self):

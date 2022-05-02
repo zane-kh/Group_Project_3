@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import datetime
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # Create your models here.
 GENDERS_CHOICE = (
@@ -20,6 +21,7 @@ class Patient(models.Model):
     patient_weight = models.IntegerField()
     color = models.CharField(max_length=50)
     created_date = models.DateTimeField(default=datetime.now, blank=True)
+    user = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.patient_name
@@ -32,6 +34,7 @@ class Service(models.Model):
     service_type = models.CharField(max_length=50)
     service_duration = models.DurationField()
     service_description = models.TextField(max_length=200)
+    user = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.service_type
