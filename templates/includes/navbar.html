@@ -1,8 +1,9 @@
 {% load static %}
 
-<nav class="navbar navbar-light bg-light">
-  <div class="container" style="display: flex; justify-content: space-between">
+<nav class="navbar navbar-light bg-light" style="display: flex; justify-content: space-between">
+  <div class="container" >
     <div style="display: flex; justify-content: left">
+      {% if user.is_authenticated %}
       <div class="dropdown">
         <button
           class="btn-lg btn-warning dropdown-toggle"
@@ -42,6 +43,11 @@
           </li>
         </ul>
       </div>
+      {% else %}
+      <div>
+
+      </div>
+      {% endif %}
     </div>
     <div>
       <a
@@ -53,8 +59,23 @@
       </a>
     </div>
     <div style="display: flex; justify-content: flex-end">
+      
+      {% if user.is_authenticated %}
+
       <ul>
-        <li class="login_link"><a href="#">Login</a></li>
+        <li class="login_link"><strong>Welcome, Dr.{{ user.username }}</strong></li>
+      </ul>
+      <ul>
+        <li>| </li>
+      </ul>
+      <ul>
+        <li class="login_link"><a href="{% url 'logout' %}">Logout</a></li>
+      </ul>
+        
+      {% else %}
+        
+      <ul>
+        <li class="login_link"><a href="{% url 'login' %}">Login</a></li>
       </ul>
       <ul>
         <li><a href="#">| </a></li>
@@ -62,6 +83,7 @@
       <ul>
         <li class="login_link"><a href="#">Signup</a></li>
       </ul>
+      {% endif %}
     </div>
   </div>
 </nav>
