@@ -32,6 +32,7 @@
         <div class="form-group mb-0 clearfix">
             <button type="submit" class="btn btn-md btn-success float-center">Login</button>
         </div>
+        <input type="hidden" name="next" value="{{ next }}">
       </form>
     <!-- <form method="post" action="{% url 'login' %}">
         {% csrf_token %}

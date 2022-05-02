@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
 from .models import Patient
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -11,6 +12,7 @@ def about (request):
     # return HttpResponse('<h1> This is the About page </h1>')
     return render(request, 'about.html')
 
+@login_required(login_url='/vet_account/login/')
 def patients_index(request):
     patients = Patient.objects.all()
     return render(request, 'patients/index.html', {
@@ -68,6 +70,7 @@ def next_month(d):
     month = 'month=' + str(next_month.year) + '-' + str(next_month.month)
     return month
 
+@login_required(login_url='/vet_account/login/')
 def patient_history(request, patient_id, event_id = None):
     patient = Patient.objects.get(id=patient_id)
     
@@ -89,39 +92,49 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Patient, Service
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-class PatientCreate(CreateView):
+
+    
+class PatientCreate(LoginRequiredMixin, CreateView):
     model = Patient
     # fields = ['patient_name', 'patient_lastname', 'patient_species', 'patient_age', 'patient_gender', 'patient_weight', 'color' ]
     fields = '__all__'
     success_url = '/patients/'
+    login_url='/vet_account/login/'
 
-class PatientUpdate(UpdateView):
+class PatientUpdate(LoginRequiredMixin, UpdateView):
     model = Patient
     fields = '__all__'
+    login_url='/vet_account/login/'
 
-class PatientDelete(DeleteView):
+class PatientDelete(LoginRequiredMixin, DeleteView):
     model = Patient
     success_url = '/patients/'
+    login_url='/vet_account/login/'
 
 
 
-class ServiceList(ListView):
+class ServiceList(LoginRequiredMixin, ListView):
     model = Service
+    login_url='/vet_account/login/'
 
-class ServiceCreate(CreateView):
+class ServiceCreate(LoginRequiredMixin, CreateView):
     model = Service
     fields = '__all__'
+    login_url='/vet_account/login/'
 
-class ServiceDetail(DetailView):
+class ServiceDetail(LoginRequiredMixin, DetailView):
     model = Service 
     template_name = 'main_app/service_detail.html'
+    login_url='/vet_account/login/'
     
-class ServiceUpdate(UpdateView):
+class ServiceUpdate(LoginRequiredMixin, UpdateView):
     model = Service
     fields= ['service_type', 'service_price', 'service_duration', 'service_description']
+    login_url='/vet_account/login/'
     
-class ServiceDelete(DeleteView):
+class ServiceDelete(LoginRequiredMixin, DeleteView):
     model = Service
     fields = '__all__'
     success_url = '/services/'
