@@ -116,4 +116,9 @@ class ServiceDetail(ListView):
     
 class ServiceUpdate(UpdateView):
     model = Service
+    fields= ['service_type', 'service_price', 'service_duration', 'service_description']
+    
+class ServiceDelete(DeleteView):
+    model = Service
     fields = '__all__'
+    success_url = '/services/'

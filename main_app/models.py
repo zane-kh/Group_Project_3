@@ -35,3 +35,6 @@ class Service(models.Model):
 
     def __str__(self):
         return self.service_type
+    
+    def get_absolute_url(self):
+        return reverse('service_detail', kwargs={'pk': self.id})
