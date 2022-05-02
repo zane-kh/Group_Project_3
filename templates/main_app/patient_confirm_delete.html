@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Are you sure?</h1>
+
+<h4>Delete {{ patient.patient_name }}?</h4>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+    <a href="{% url 'patient_history' patient.id %}">Cancel</a>
+</form>
+
+{% endblock content %}
+    

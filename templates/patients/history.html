@@ -23,6 +23,9 @@
         <div style="margin: 20px 40px;">{{patient.color}}</div>
     </div>
 </div>
-
+<div>
+    <a href="{% url 'patients_update' patient.id %}">Edit</a>
+    <a href="{% url 'patients_delete' patient.id %}">Delete</a>
+</div>
 
 {% endblock content %}
