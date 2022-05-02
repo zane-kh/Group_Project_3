@@ -1,19 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
+<div style="width: 50vw; margin: 25px auto; text-align: center;">
     <h1>Signup</h1>
     {% if error_message %}<p class="text-danger">{{ error_message }}</p>{% endif %}
-    <form action="" method="POST">
+    <form action="" method="POST" >
         {% csrf_token %}
         {{ form.non_field_errors }}
         {% for field in form %}
-        <div>
-            {{ field.label_tag }} {{ field }}
+        <div style="width: 50vw; margin: 25px auto;">
+            <div>
+                {{ field.label_tag }} 
+            </div>
+            <div>
+                {{ field }}
+            </div>
+            
             {% if error_message %}
                 {{ field.help_text }}
             {% endif %}
         </div>
         {% endfor %}
-        <input type="submit" value="Sign Up">
+        <input type="submit" class="btn-md btn btn-md btn-success float-center" value="Sign Up" >
     </form>
     <!-- <form action="" method="POST">
         {% csrf_token %}
@@ -35,5 +42,6 @@
             <button type="submit" class="btn-md btn-theme float-center">Sign Up</button>
         </div>
     </form> -->
+</div>
 {% endblock content %}
     
