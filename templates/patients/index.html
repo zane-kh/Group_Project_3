@@ -6,7 +6,8 @@
 
 
 
-{% for patient in patients %}
+{% if patient %}
+  {% for patient in patients %}
     <div>
         <div class="card text-center" style="width: 75vw; margin: 40px auto;">
             <div class="card-header" >
@@ -22,8 +23,12 @@
             </div>
           </div>
     </div>
+  {% endfor %}
+{% else %}
+  <h1 style="text-align: center; margin-top: 100px;" class="display-4">Add a Patient to your practice!</h1>
+{% endif %}
+  
 
-{% endfor %}
 
 {% endblock content %}
     

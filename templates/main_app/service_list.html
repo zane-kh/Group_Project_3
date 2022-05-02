@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}   
+
+{% if object %}
     {% for service in object_list %}
     <div>
         <div class="card text-center" style="width: 75vw; margin: 40px auto;">
@@ -15,5 +17,10 @@
         </div>
     </div>
     {% endfor %}   
+{% else %}
+    <h1 style="text-align: center; margin-top: 100px;" class="display-4">Add a Service to your skills!</h1>
+{% endif %}
+    
+  
 {% endblock content %}
     
