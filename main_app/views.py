@@ -85,9 +85,10 @@ def patient_history(request, patient_id, event_id = None):
         'patient': patient, 
     })
     
-from django.shortcuts import render 
+from django.shortcuts import render
+from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Patient
+from .models import Patient, Service
 
 class PatientCreate(CreateView):
     model = Patient
@@ -101,3 +102,10 @@ class PatientUpdate(UpdateView):
 class PatientDelete(DeleteView):
     model = Patient
     success_url = '/patients/'
+
+class ServiceList(ListView):
+    model = Service
+
+class ServiceCreate(CreateView):
+    model = Service
+    fields = '__all__'
