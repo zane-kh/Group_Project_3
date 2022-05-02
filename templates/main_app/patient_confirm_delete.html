@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Are you sure?</h1>
+<div style="margin: 40px 40px; ">
+    <h1>Are you sure you wish to delete <span style="color: orange">{{ patient.patient_name }}</span>?</h1>
 
-<h4>Delete {{ patient.patient_name }}?</h4>
-
-<form action="" method="POST">
+    <form action="" method="POST">
     {% csrf_token %}
-    <input type="submit" value="Delete">
-    <a href="{% url 'patient_history' patient.id %}">Cancel</a>
-</form>
+        <button style="margin-right: 40px;" class="btn btn-md btn-danger" type="submit" value="Delete"> Delete </button>
+        <a href="{% url 'patient_history' patient.id %}"><button class="btn btn-md btn-secondary">Cancel</button></a>
+    </form>
+</div>
+
 
 {% endblock content %}
     

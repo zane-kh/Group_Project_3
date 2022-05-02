@@ -1,25 +1,55 @@
 {% load static %}
 
 <nav class="navbar navbar-light bg-light">
-  <div class="container" style="display: flex; justify-content: space-between;">
+  <div class="container" style="display: flex; justify-content: space-between">
     <div style="display: flex; justify-content: left">
       <div class="dropdown">
-        <button class="btn-lg btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        <button
+          class="btn-lg btn-warning dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
           &nbsp Menu &nbsp
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
           <li><a class="dropdown-item" href="{% url 'about' %}">About</a></li>
-          <li><a class="dropdown-item" href="{% url 'patients_create' %}">Add Patient</a></li>
-          <li><a class="dropdown-item" href="{% url 'patients' %}">View All Patients</a></li>
-          <li><a class="dropdown-item" href="{% url 'cal:event_new' %}">New Appointment</a></li>
-          <li><a class="dropdown-item" href="{% url 'services_index' %}">View All Services</a></li>
-          <li><a class="dropdown-item" href="{% url 'services_create' %}">Add Service</a></li>
+          <li>
+            <a class="dropdown-item" href="{% url 'patients_create' %}"
+              >Add Patient</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="{% url 'patients' %}"
+              >View All Patients</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="{% url 'services_create' %}"
+              >Add Service</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="{% url 'services_index' %}"
+              >View All Services</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="{% url 'cal:event_new' %}"
+              >New Appointment</a
+            >
+          </li>
         </ul>
       </div>
     </div>
     <div>
-      <a class="navbar-brand" style="padding-left: 100px; display: flex; justify-content: center" href="{% url 'cal:calendar' %}">
-        <img src="{% static 'images/brand_logo_3.jpeg' %}">
+      <a
+        class="navbar-brand"
+        style="padding-left: 100px; display: flex; justify-content: center"
+        href="{% url 'cal:calendar' %}"
+      >
+        <img src="{% static 'images/brand_logo_3.jpeg' %}" />
       </a>
     </div>
     <div style="display: flex; justify-content: flex-end">
