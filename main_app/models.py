@@ -26,3 +26,12 @@ class Patient(models.Model):
 
     def get_absolute_url(self):
         return reverse('patient_history', kwargs={'patient_id': self.id})
+
+class Service(models.Model):
+    service_price = models.IntegerField()
+    service_type = models.CharField(max_length=50)
+    service_duration = models.DurationField()
+    service_description = models.TextField(max_length=200)
+
+    def __str__(self):
+        return self.service_type
