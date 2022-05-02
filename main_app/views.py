@@ -92,7 +92,8 @@ from .models import Patient, Service
 
 class PatientCreate(CreateView):
     model = Patient
-    fields = ['patient_name', 'patient_lastname', 'patient_species', 'patient_age', 'patient_gender', 'patient_weight', 'color' ]
+    # fields = ['patient_name', 'patient_lastname', 'patient_species', 'patient_age', 'patient_gender', 'patient_weight', 'color' ]
+    fields = '__all__'
     success_url = '/patients/'
 
 class PatientUpdate(UpdateView):
@@ -102,6 +103,8 @@ class PatientUpdate(UpdateView):
 class PatientDelete(DeleteView):
     model = Patient
     success_url = '/patients/'
+
+
 
 class ServiceList(ListView):
     model = Service
