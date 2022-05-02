@@ -109,3 +109,11 @@ class ServiceList(ListView):
 class ServiceCreate(CreateView):
     model = Service
     fields = '__all__'
+
+class ServiceDetail(ListView):
+    model = Service 
+    template_name = 'main_app/service_detail.html'
+    
+class ServiceUpdate(UpdateView):
+    model = Service
+    fields = '__all__'

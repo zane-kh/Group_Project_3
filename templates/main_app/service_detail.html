@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for service in service_list  %}
+    
+<div style="margin: 20px 40px; display: flex; justify-content: space-between; width: 40vw; ">
+    <h1>Service ID: {{service.id}}</h1>
+    <a href="{% url 'service_update' service.id %}"> <button class="btn btn-md btn-secondary">Edit</button> </a>
+    <a href=""> <button class ="btn btn-md btn-danger">Delete</button> </a>
+</div>
+
+<div style="display: flex; flex-direction: column;">
+    <div
+        style=" font-size: 24px; margin-left: 50px; width: 50vw; display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(6, 1fr)">
+        <div style="margin: 20px 0;" class="bg-$orange-200 text-dark">Price: </div>
+        <div style="margin: 20px 40px;">$ {{service.service_price}}</div>
+        <div style="margin: 20px 0;">Last Type: </div>
+        <div style="margin: 20px 40px;">{{service.service_type}}</div>
+        <div style="margin: 20px 0;">Duration: </div>
+        <div style="margin: 20px 40px;">{{service.service_duration}}</div>
+        <div style="margin: 20px 0;">Description: </div>
+        <div style="margin: 20px 40px;">{{service.service_description}}</div>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock content %}
