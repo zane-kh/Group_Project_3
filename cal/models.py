@@ -13,9 +13,14 @@ class Event(models.Model):
     end_time = models.DateTimeField()
     user = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
     
+    # @property
+    # def get_html_url(self):
+    #     url = reverse('cal:event_edit', args=(self.id,))
+    #     return f'<a href="{url}"> {self.title} </a>'
+    
     @property
     def get_html_url(self):
-        url = reverse('cal:event_edit', args=(self.id,))
+        url = reverse('cal:event_detail', args=(self.id,))
         return f'<a href="{url}"> {self.title} </a>'
     
     

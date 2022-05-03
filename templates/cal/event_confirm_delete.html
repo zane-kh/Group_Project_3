@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div style="margin: 40px 40px;">
+    <h1>Are you sure you wish to cancel <span style="color: orange">{{ event.title }}</span>?</h1>
+
+    <div style="display: flex">
+        <a href="{% url 'cal:event_detail' event.pk %}"><button class="btn btn-md btn-secondary">Cancel</button></a>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div style="margin-right: 40px;">
+                
+                <input style="margin-left: 40px" class="btn btn-md btn-danger" type="submit" value="Confirm Delete">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+{% endblock content %}

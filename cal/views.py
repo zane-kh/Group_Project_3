@@ -1,7 +1,8 @@
 from datetime import datetime, timedelta, date
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
+from django.views.generic.edit import DeleteView
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 import calendar
@@ -65,3 +66,12 @@ def event(request, event_id=None):
         form.save()
         return HttpResponseRedirect(reverse('cal:calendar'))
     return render(request, 'cal/event.html', {'form': form})
+
+class EventDetail(DetailView):
+    model = Event 
+    template_name = 'cal/event_detail.html'
+    
+class EventDelete(DeleteView):
+    model = Event 
+    fields = '__all__'
+    success_url = '/calendar/'
