@@ -4,10 +4,12 @@
 
 
     
-<div style="margin: 20px 40px; display: flex; justify-content: space-between; width: 40vw; ">
+<div style="width: 40vw; margin-top: 40px; margin-left: 40px; display: flex; justify-content: space-between;">
     <h1>Service ID: {{service.id}}</h1>
-    <a href="{% url 'service_update' service.pk %}"> <button class="btn btn-md btn-secondary">Edit</button> </a>
-    <a href="{% url 'service_delete' service.pk %}"> <button class ="btn btn-md btn-danger">Delete</button> </a>
+    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <button type="button" class="btn btn-danger"><a style="text-decoration: none; color: white;" href="{% url 'service_delete' service.pk %}"> <i class="bi bi-trash3"></i> &nbsp Delete</a></button>
+        <button type="button" class="btn btn-secondary"> <a style="text-decoration: none; color: white;" href="{% url 'service_update' service.pk %}"> &nbsp <i class="bi bi-pencil-square"></i>&nbsp Edit &nbsp</a></button>
+    </div>
 </div>
 
 <div style="display: flex; flex-direction: column;">
