@@ -11,14 +11,14 @@ This is the third project assigned by General Assembly: Software Engineering Imm
 * Django
 * PostgreSQL
 * Python
-* HTML
-* CSS
+* HTML/CSS
+* Bootstrap
 
 ## Heroku Link
 
 Link goes here
 
-## MVP
+## Minimal Viable Product
 
 * Patient model created
 * User (veterinarian) model created
@@ -42,7 +42,7 @@ Link goes here
 
 https://trello.com/b/HqwZim1i/noah-project
 
-## ERD
+## Entity Relationship Diagram
 
 ![App Screenshot](https://i.imgur.com/JOmHH07.png)
 
