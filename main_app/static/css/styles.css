@@ -1,3 +1,7 @@
+* {
+    overflow: hidden;
+}
+
 .navbar {
     border-bottom: 1px solid black;
     /* background: white; */
