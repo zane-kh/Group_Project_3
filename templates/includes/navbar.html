@@ -1,10 +1,10 @@
 {% load static %}
 
-<nav class="navbar navbar-light bg-light" style="display: flex; justify-content: space-between">
+<nav class="navbar navbar-light bg-light">
   <div class="container" >
-    <div style="display: flex; justify-content: left">
+    <div>
       {% if user.is_authenticated %}
-      <div class="dropdown" style="overflow:visible;">
+      <div class="dropdown">
         <button
           class="btn-lg btn-warning dropdown-toggle"
           type="button"
@@ -49,31 +49,23 @@
       </div>
       {% endif %}
     </div>
-    <div>
+    <div class="brand">
       {% if user.is_authenticated %}
-      <a
-        class="navbar-brand"
-        style="padding-left: 150px; display: flex; justify-content: end"
-        href="{% url 'cal:calendar' %}"
-      >
+      <a class="navbar-brand" href="{% url 'cal:calendar' %}">
         <img src="{% static 'images/brand_logo_3.jpeg' %}" />
       </a>
       {% else %}
-      <a
-        class="navbar-brand"
-        style="padding-left: 150px; display: flex; justify-content: end"
-        href="#"
-      >
+      <a class="navbar-brand" href="#">
         <img src="{% static 'images/brand_logo_3.jpeg' %}" />
       </a>
       {% endif %}
     </div>
-    <div style="display: flex; justify-content: flex-end">
+    <div class="links">
       
       {% if user.is_authenticated %}
 
       <ul>
-        <li class="login_link"><strong>Welcome, Dr.{{ user.username }}</strong></li>
+        <li class="login_link"><strong>Welcome, Dr. {{ user.username }}</strong></li>
       </ul>
       <ul>
         <li>| </li>

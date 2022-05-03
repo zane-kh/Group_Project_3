@@ -1,6 +1,38 @@
+/* Navbar Styling */
+nav {
+    display: grid;
+    justify-content: space-between
+}
+
+nav > div > div {
+    display: flex;
+    justify-content: left
+}
+
 .navbar {
     border-bottom: 1px solid black;
     /* background: white; */
+}
+
+.dropdown{
+    overflow: visible;
+    flex-grow: 1;
+}
+
+.navbar-brand {
+    padding-left: 0px;
+    display: flex;
+    justify-content: end
+}
+
+.brand {
+    flex-grow: 2;
+}
+
+.links {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
 }
 
 .navbar-brand img {
@@ -118,3 +150,28 @@ li {
     width: 100%;
 }
 
+.about-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 30px 15px;
+}
+
+#about-text {
+    grid-column: 0 / 1;
+}
+
+#about-carousel {
+    grid-column: 2 / 3;
+}
+
+
+@media (max-width: 1400px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .navbar-brand img {
+        padding-left: 0px;
+        max-height: 130px;
+    }
+}
