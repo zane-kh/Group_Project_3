@@ -118,3 +118,27 @@ li {
     width: 100%;
 }
 
+.about-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 30px 15px;
+}
+
+#about-text {
+    grid-column: 0 / 1;
+}
+
+#about-carousel {
+    grid-column: 2 / 3;
+}
+
+
+@media (max-width: 1400px) {
+    .navbar {
+        justify-content: center;
+    }
+
+    .navbar-brand img {
+        padding-left: 0px;
+    }
+}
