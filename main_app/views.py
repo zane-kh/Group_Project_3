@@ -6,7 +6,8 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def home (request):
-    return HttpResponse ('working so far')
+    # return HttpResponse ('working so far')
+    return render (request, 'landingpage.html')
 
 def about (request):
     # return HttpResponse('<h1> This is the About page </h1>')
