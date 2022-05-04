@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 from calendar import HTMLCalendar
+from xml.dom.expatbuilder import theDOMImplementation
 from .models import Event 
 
 class Calendar(HTMLCalendar):
@@ -15,10 +16,12 @@ class Calendar(HTMLCalendar):
         
         for event in events_per_day:
             # d += f"<li> {event.title} </li>"
-            d += f'<li> {event.get_html_url} </li>'
+            format = "%I:%M %p"
+            d += f'<li> {event.get_html_url} - {event.start_time.strftime(format)}</li>'
                 
         if day != 0:
             return f"<td><span class='date'>{day}</span><ul> {d} </ul></td>"
+        
             
         return '<td></td>'
     
@@ -32,7 +35,7 @@ class Calendar(HTMLCalendar):
     def formatmonth(self, withyear = True):
         events = Event.objects.filter(start_time__year = self.year, start_time__month = self.month)
         
-        cal =  f'<table border="0" cellpadding="0" cellspacing="0" class="calendar" >\n'
+        cal =  f'<table cellpadding="0" cellspacing="0" class="calendar" >\n'
         cal += f'{self.formatmonthname(self.year, self.month, withyear=withyear)}'
         cal += f'{self.formatweekheader()}\n'
         
