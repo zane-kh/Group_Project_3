@@ -28,11 +28,11 @@
         <div style="margin: 20px 0;">Color: </div>
         <div style="margin: 20px 40px;">{{patient.color}}</div>
     </div>
-    <div class="container-sm">
+    <div>
         {% if events %}
             {% for e in events %}
                 {% if e.patient.patient_name == patient.patient_name %}
-                <div class="card text-center" style="width: 35vw; margin: 40px auto;">
+                <div class="card text-center" style="width: 35vw; margin: 0px auto 40px;">
                     <div class="card-header" >
                         <i class="bi bi-info-square-fill"></i> &nbsp {{e.service}}
                     </div>
