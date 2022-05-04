@@ -74,6 +74,7 @@ def next_month(d):
 @login_required(login_url='/vet_account/login/')
 def patient_history(request, patient_id, event_id = None):
     patient = Patient.objects.get(id=patient_id)
+    events = Event.objects.all()
     
     # instance = Event()
     # if event_id:
@@ -87,6 +88,7 @@ def patient_history(request, patient_id, event_id = None):
     #     return HttpResponseRedirect(reverse('cal:calendar'))
     return render(request, 'patients/history.html', {
         'patient': patient, 
+        'events': events,
     })
     
 from django.shortcuts import render
