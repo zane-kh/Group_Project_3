@@ -1,3 +1,7 @@
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
 /* Navbar Styling */
 nav {
     display: grid;
@@ -95,8 +99,7 @@ nav > div > div {
     margin: 0 auto;
     font-size: 13px;
     align-items: top;
-    margin-bottom: 40px; 
-    
+    margin-bottom: 55px;
 }
 
 .calendar tr,
@@ -196,6 +199,14 @@ li {
     grid-column: 2 / 3;
 }
 
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 10px 15px 10px 15px;
+    border-top: 1px solid black;
+    background-color: #F8F9FA;
+}
 
 @media (max-width: 1400px) {
     .navbar {
