@@ -65,10 +65,10 @@
       {% if user.is_authenticated %}
 
       <ul>
-        <li class="login_link"><strong>Welcome, Dr. {{ user.username }}</strong></li>
+        <li style="font-size: 25px;" class="login_link">Welcome, Dr. {{ user.username }}</li>
       </ul>
       <ul>
-        <li>| </li>
+        <li style="font-size: 40px;">| </li>
       </ul>
       <ul>
         <li class="login_link"><a href="{% url 'logout' %}">Logout</a></li>
@@ -80,7 +80,7 @@
         <li class="login_link"><a href="{% url 'login' %}">Login</a></li>
       </ul>
       <ul>
-        <li><a href="#">| </a></li>
+        <li><a style="font-size: 40px" href="#">| </a></li>
       </ul>
       <ul>
         <li class="login_link"><a href="{% url 'signup' %}">Signup</a></li>

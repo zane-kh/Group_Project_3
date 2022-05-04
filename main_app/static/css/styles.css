@@ -46,17 +46,28 @@ nav > div > div {
 }
 
 .links ul {
-    margin: 0
+    margin: 0;
+}
+
+.links li {
+    margin: 0;
+    font-size: 35px;
+}
+
+
+.login_link a{
+    font-size: 35px;
+}
+
+.navbar li {
+    font-size: 20px;
+    list-style-type: none;
 }
 
 .navbar-brand img {
     width: 75%;
 }
 
-.navbar li {
-    font-size: 30px;
-    list-style-type: none;
-}
 
 .navbar a {
     text-decoration: none;
@@ -93,20 +104,26 @@ nav > div > div {
 
 .calendar tr,
 .calendar td {
-    border: 1px solid black;
+    border: black;
+    
 }
 
 .calendar th {
-    padding: 10px;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
+    background-color: red;
+    color: white;
+    font-family: helvetica;
+    
 }
 
 .calendar td {
     width: 200px;
     max-height: 150px;
-    padding: 20px 0px 0px 5px;
+    padding: 0px 0px 0px 5px;
     vertical-align: text-top;
+    background-color: lightgray;
+    border: 5px solid white;
 }
 
 .month {
@@ -114,7 +131,9 @@ nav > div > div {
 }
 
 .date {
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    
 }
 
 ul {
@@ -123,11 +142,13 @@ ul {
 }
 
 a {
-    color: #17a2b8;
+    color: black;
+    font-size: 16px;
 }
 
 li {
     list-style: none;
+    font-size: 16px;
 }
 
 .left {
