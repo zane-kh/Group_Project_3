@@ -29,7 +29,6 @@
         <div style="margin: 20px 40px;">{{patient.color}}</div>
     </div>
     <div class="container-sm">
-        <h3>Patient Events</h3>
         {% if events %}
             {% for e in events %}
                 {% if e.patient.patient_name == patient.patient_name %}
