@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-
+WSGI_APPLICATION = 'Noah.wsgi.application'
 
 
 # Database
@@ -130,6 +130,5 @@ LOGOUT_REDIRECT_URL = '/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import django_heroku
-django_heroku.settings(locals())
-WSGI_APPLICATION = 'Noah.wsgi.application'
+import django_on_heroku
+django_on_heroku.settings(locals())
