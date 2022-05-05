@@ -1,2 +1,2 @@
-web: gunicorn group_project_3.wsgi
+web: gunicorn Noah.wsgi
 
