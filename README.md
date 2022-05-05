@@ -6,6 +6,10 @@ Allow Veterinarian to use EMR program
 
 This is the third project assigned by General Assembly: Software Engineering Immersive program. We are using what we learned in Django and Python along with bootstrap for styling.
 
+## Heroku Link
+
+https://noah-emr.herokuapp.com/
+
 ## Technologies Used
 
 * Django
@@ -14,9 +18,6 @@ This is the third project assigned by General Assembly: Software Engineering Imm
 * HTML/CSS
 * Bootstrap
 
-## Heroku Link
-
-Link goes here
 
 ## Minimal Viable Product
 
@@ -44,15 +45,20 @@ https://trello.com/b/HqwZim1i/noah-project
 
 ## Entity Relationship Diagram
 
-![App Screenshot](https://i.imgur.com/JOmHH07.png)
+![ERD](https://i.imgur.com/JOmHH07.png)
 
 ## Wireframes
 
-![App Screenshot](https://i.imgur.com/UxqDw4N.png)
+![Wireframe](https://i.imgur.com/UxqDw4N.png)
 
 ## PowerPoint
 
 https://docs.google.com/presentation/d/1gN5p6AGT9Lzn5jY8EYX_ONKN5u46bQ2g2u50pus-_f0/edit#slide=id.gf3f39ce1de_0_447
+
+## Screenshots
+
+![App Screenshot1](https://i.imgur.com/OhoOUJg.png)
+![App Screenshot2](https://i.imgur.com/M509dOO.png)
 
 ## Ice Box
 
